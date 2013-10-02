@@ -24,6 +24,7 @@ define('COMMERCE_CYBERSOURCE_SASOP_TEST_TRANSACTION_SERVER', 'https://testsecure
 /**
  * CyberSource transaction types.
  */
+define('COMMERCE_CYBERSOURCE_SASOP_TRANSACTION_SALE', 'sale');
 define('COMMERCE_CYBERSOURCE_SASOP_TRANSACTION_CREATE_TOKEN', 'create_payment_token');
 define('COMMERCE_CYBERSOURCE_SASOP_TRANSACTION_AUTH_CREATE_TOKEN', 'authorization,create_payment_token');
 define('COMMERCE_CYBERSOURCE_SASOP_TRANSACTION_SALE_CREATE_TOKEN', 'sale,create_payment_token');
@@ -154,6 +155,7 @@ function commerce_cybersource_sasop_settings_form($settings = NULL) {
     '#type' => 'select',
     '#title' => t('Transaction type'),
     '#options' => array(
+      COMMERCE_CYBERSOURCE_SASOP_TRANSACTION_SALE => t('Capture funds'),
       COMMERCE_CYBERSOURCE_SASOP_TRANSACTION_CREATE_TOKEN => t('Create payment token'),
       COMMERCE_CYBERSOURCE_SASOP_TRANSACTION_AUTH_CREATE_TOKEN => t('Authorize funds and create payment token'),
       COMMERCE_CYBERSOURCE_SASOP_TRANSACTION_SALE_CREATE_TOKEN => t('Capture funds and create payment token'),
